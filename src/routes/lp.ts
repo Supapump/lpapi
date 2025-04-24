@@ -1,15 +1,15 @@
-const express = require('express');
-const { body, param, validationResult } = require('express-validator');
+import express, { Request, Response, NextFunction } from 'express';
+import { body, param, validationResult } from 'express-validator';
 const router = express.Router();
 
 // Import our LP controller that handles the business logic
-const lpController = require('../controllers/lpController');
+import * as lpController from '../controllers/lpController';
 
 /**
  * Middleware to validate request data
  * Returns a 400 error if any validation rules fail
  */
-const validate = (req, res, next) => {
+const validate = (req: Request, res: Response, next: NextFunction) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -91,4 +91,4 @@ router.post('/swap',
   lpController.swapTokens
 );
 
-module.exports = router; 
+export default router; 

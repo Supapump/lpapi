@@ -1,14 +1,16 @@
-// Load environment variables from .env file
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
+import dotenv from 'dotenv';
+import express, { Express, Request, Response, NextFunction } from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
 
 // Import our LP routes
-const lpRoutes = require('./routes/lp');
+import lpRoutes from '../routes/lp';
 
-const app = express();
+// Load environment variables from .env file
+dotenv.config();
+
+const app: Express = express();
 
 /**
  * Security and parsing middleware setup
@@ -38,7 +40,11 @@ app.use('/api/v1/lp', lpRoutes);
  * Global error handling middleware
  * Catches any errors thrown in routes/controllers
  */
-app.use((err, req, res, next) => {
+interface ErrorWithStack extends Error {
+  stack?: string;
+}
+
+app.use((err: ErrorWithStack, req: Request, res: Response, next: NextFunction) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Something went wrong!' });
 });
@@ -47,14 +53,14 @@ app.use((err, req, res, next) => {
  * 404 handler for undefined routes
  * Must be registered last
  */
-app.use((req, res) => {
+app.use((req: Request, res: Response) => {
   res.status(404).json({ error: 'Route not found' });
 });
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT: number = parseInt(process.env.PORT || '3000', 10);
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-module.exports = app; 
+export default app; 
