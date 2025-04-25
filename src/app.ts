@@ -5,8 +5,10 @@ import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import compression from 'compression';
 
-// Import our LP routes and middleware
+// Import our routes and middleware
 import lpRoutes from './routes/lp';
+import analyticsRoutes from './routes/analytics';
+import tokenRoutes from './routes/tokens';
 import { requestLogger } from './middleware/logger';
 
 // Load environment variables from .env file
@@ -41,8 +43,10 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-// Register our LP routes under the /api/v1/lp prefix
+// Register routes under the /api/v1 prefix
 app.use('/api/v1/lp', lpRoutes);
+app.use('/api/v1/analytics', analyticsRoutes);
+app.use('/api/v1/tokens', tokenRoutes);
 
 /**
  * Global error handling middleware

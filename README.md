@@ -11,6 +11,9 @@ A REST API for interacting with the Meteora Liquidity Pool system on Solana.
 - Add/remove liquidity
 - Swap tokens
 - Check user positions
+- Advanced analytics and statistics
+- Token information and metrics
+- Historical data and trends
 
 ## Setup
 
@@ -57,6 +60,18 @@ A REST API for interacting with the Meteora Liquidity Pool system on Solana.
 ### User Operations
 - `GET /api/v1/lp/position/:userAddress` - Get user's liquidity position
 - `POST /api/v1/lp/swap` - Swap tokens
+
+### Analytics and Statistics
+- `GET /api/v1/analytics/volume/history` - Get historical volume data
+- `GET /api/v1/analytics/pool/:poolId/apr` - Get pool APR/APY statistics
+- `GET /api/v1/analytics/tvl` - Get total value locked (TVL)
+- `GET /api/v1/analytics/pool/:poolId/metrics` - Get pool performance metrics
+
+### Token Information
+- `GET /api/v1/tokens/:tokenAddress` - Get token information
+- `GET /api/v1/tokens/:tokenAddress/pools` - Get pools containing the token
+- `GET /api/v1/tokens/:tokenAddress/price-history` - Get token price history
+- `GET /api/v1/tokens/:tokenAddress/holders` - Get token holders statistics
 
 ## Request/Response Examples
 

@@ -1,0 +1,6 @@
+{"level":"info","message":{"duration":"8ms","ip":"::1","method":"GET","path":"/api/v1/analytics","statusCode":404},"timestamp":"2025-04-25T02:17:26.880Z"}
+{"level":"info","message":{"duration":"9ms","ip":"::1","method":"POST","path":"/add-liquidity","statusCode":400},"timestamp":"2025-04-25T02:18:09.458Z"}
+{"level":"info","message":{"duration":"3ms","ip":"::1","method":"POST","path":"/add-liquidity","statusCode":200},"timestamp":"2025-04-25T02:18:49.627Z"}
+{"level":"info","message":{"duration":"3ms","ip":"::1","method":"POST","path":"/add-liquidity","statusCode":200},"timestamp":"2025-04-25T02:18:57.648Z"}
+{"level":"info","message":{"duration":"9ms","ip":"::1","method":"GET","path":"/api/v1/analytics/pool/pool_123/metrics%0A","statusCode":404},"timestamp":"2025-04-25T02:19:28.751Z"}
+{"level":"info","message":{"duration":"4ms","ip":"::1","method":"GET","path":"/pool/pool_123/metrics","statusCode":200},"timestamp":"2025-04-25T02:19:56.612Z"}
