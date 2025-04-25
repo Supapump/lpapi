@@ -134,4 +134,31 @@ To run the project locally, you'll need:
     ```bash
    npm install
 
+### Running the Application Locally
+
+1. Start the server locally:
+   ```bash
+   npm start
+
+The app will run on http://localhost:4000 (or the port you set).
+
+### Deployment on Render
+
+1. Push your project to GitHub (if you haven’t done so already).
+2. Create a new web service on Render.
+3. Connect your GitHub repository to Render.
+4. Set the start command to npm start.
+5. Set the port to 4000 (or the default Render port) if necessary.
+6. Deploy the app, and once it’s running, you’ll receive a live URL to access the API.
+
+### Testing
+
+After deployment, you can test the API using Postman, by sending requests to the deployed URL. Example:
+
+**GET** /api/lp/all: Fetches all liquidity pools.
+
+**POST** /api/lp/add-liquidity: Adds liquidity to a pool (requires authentication).
+
+   
+
 
