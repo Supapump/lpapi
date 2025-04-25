@@ -35,7 +35,7 @@ async function buildRemoveLiquidityTx(wallet, lpMint, amount) {
   const connection = new Connection('https://api.devnet.solana.com');
   const transaction = new Transaction();
   
-  // Add logic to build actual liquidity removing instructions
+  
   const ix = await buildRemoveLiquidityInstruction(connection, wallet, lpMint, amount);
   transaction.add(ix);
 
