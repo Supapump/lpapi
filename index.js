@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 4000;
 app.use(bodyParser.json());
 app.use('/api/lp', lpRoutes);
 
+app.get('/', (req, res) => {
+    res.send('Hello, World! Server is running successfully.');
+  });  
+
 app.listen(PORT, () => {
     console.log(`Server is successfully listening on port ${PORT}`);
 }).on('error', (err) => {
