@@ -1,22 +1,20 @@
-const express = require ('express')
-const bodyParser = require('body-parser')
+const express = require('express');
+const bodyParser = require('body-parser');
 require('dotenv').config();
-const app = express()
-const authMiddleware = require('./middleware/auth')
-const lpRoutes = require('./routes/lp')
+const app = express();
+const authMiddleware = require('./middleware/auth');
+const lpRoutes = require('./routes/lp');
 
-
-const PORT = process.env.PORT || 3000
-
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use('/api/lp', lpRoutes);
 
-
 const server = () => {
-     app.listen (PORT, () => {
-        console.log ('listening to port:', PORT)
-     })
-}
+  app.listen(PORT, () => {
+    console.log(`Server is listening on port: ${PORT}`);
+  });
+};
 
-server()
+
+server();
