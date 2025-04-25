@@ -2,6 +2,18 @@
 
 A production-grade RESTful API for interacting with Meteora Liquidity Pools on Solana blockchain, developed using Node.js and Express.
 
+## Live Demo
+
+A live demonstration of this API is available at:
+- **API URL**: [http://16.170.227.240](http://16.170.227.240)
+- **API Documentation**: [http://16.170.227.240/api-docs](http://16.170.227.240/api-docs)
+
+The live demo is deployed on AWS EC2 using:
+- Node.js runtime
+- PM2 for process management and auto-restart
+- Nginx as a reverse proxy
+- Full environment configuration
+
 ## Features
 
 - RESTful API for interacting with Meteora Liquidity Pools on Solana
@@ -173,6 +185,10 @@ This API implements several security best practices:
 - Helmet for setting secure HTTP headers
 - Environment variable configuration for sensitive data
 - Error handling that doesn't leak sensitive information
+
+## Author
+
+- **Said Benzaid** - [X/Twitter](https://x.com/Benzaid_Said_)
 
 ## License
 
